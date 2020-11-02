@@ -104,37 +104,68 @@ html {
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.25em;
   font-weight: 400;
-  padding: 2em;
-  color: #fff;
-  height: 100%;
+  padding: 0em 2em;
+  color: #808080;
+  display: flex;
+  justify-content: center;
 }
 
-.wrapper {
+.flex-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: center;
+  max-width: 1200px;
 }
 
-.div-1, .div-2, .div-3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #808080;
-  line-height: 1.5em;
-  font-size: 1.4em;
-  /* width: 30%; */
-  height: auto;
-}
-
-.wrapper span {
+p span {
    color: #ec5f5f;
    text-transform: uppercase;
 }
 
+header h1 {
+   font-size: 1.5em;
+}
 
+header,
+footer {
+   width: 100%;
+   display: flex;
+   justify-content: flex-start;
+}
 
+header h1 {
+   font-size: 3em;
+}
+
+main {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   border-bottom: 1px solid #555;
+}
+
+main p {
+   font-size: 1.4em;
+}
+
+.flex-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4em;
+  font-size: 1em;
+  border-bottom: 1px solid #555;
+}
+
+footer {
+  border-top: 1px solid #555;
+}
+
+footer i {
+  padding: 30px 20px 0 0;
+}
 
 /* ==========================================================================
    Helper classes
@@ -216,14 +247,28 @@ body {
    Modify as content requires.
    ========================================================================== */
 
-@media all and (min-width: 1200px) {
-    .div-1, .div-2, .div-3 {
+@media all and (max-width: 768px) {
+   body {
+      padding: 1em;
+      }
+}
+
+@media all and (max-width: 1199px) {
+   .no-border {
+        border-top: none;
+      }
+}
+
+@media (min-width: 1200px) {
+    .flex-items {
       flex-basis: 30%;
+      border-bottom: none;
     }
 
-    .div-1, .div-2 {
+    #div-2 p {
+      border-left: 1px solid #555;
       border-right: 1px solid #555;
-      padding-right: 30px;
+      padding: 0 40px;
     }
 }
 
